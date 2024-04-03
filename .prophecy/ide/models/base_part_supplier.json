@@ -1,0 +1,53 @@
+{
+  "id" : "base_part_supplier",
+  "metainfo" : {
+    "label" : "base_part_supplier",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "base_part_supplier##wJNsaH88" : {
+      "id" : "base_part_supplier##wJNsaH88",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "base_part_supplier",
+        "phase" : 0,
+        "macroDependencies" : [ "money" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  ps_partkey AS part_key,\n  ps_suppkey AS supplier_key,\n  ps_availqty AS supplier_availabe_quantity,\n  ps_supplycost{{ money() }} AS supplier_cost_amount,\n  ps_comment AS part_supplier_comment\n\nFROM {{ source('tpch', 'partsupp') }}\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ViTJ4d9C",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

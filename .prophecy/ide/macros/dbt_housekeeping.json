@@ -1,0 +1,13 @@
+{
+  "dbt_housekeeping" : {
+    "name" : "dbt_housekeeping",
+    "macroType" : "expression",
+    "definition" : "'{{ invocation_id }}'::varchar AS dbt_batch_id, '{{ run_started_at }}'::TIMESTAMP AS dbt_batch_ts",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ ]
+    },
+    "staleState" : "none",
+    "version" : 0
+  }
+}

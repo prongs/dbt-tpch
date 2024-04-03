@@ -1,0 +1,53 @@
+{
+  "id" : "base_line_item",
+  "metainfo" : {
+    "label" : "base_line_item",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "base_line_item##dFHEUizk" : {
+      "id" : "base_line_item##dFHEUizk",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "base_line_item",
+        "phase" : 0,
+        "macroDependencies" : [ "money" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  l_orderkey AS order_key,\n  l_partkey AS part_key,\n  l_suppkey AS supplier_key,\n  l_linenumber AS order_line_number,\n  l_quantity AS quantity,\n  l_extendedprice{{ money() }} AS extended_price,\n  l_discount{{ money() }} AS discount_percentage,\n  l_tax{{ money() }} AS tax_rate,\n  l_returnflag AS return_status_code,\n  l_linestatus AS order_line_status_code,\n  l_shipdate AS ship_date,\n  l_commitdate AS commit_date,\n  l_receiptdate AS receipt_date,\n  l_shipinstruct AS ship_instructions_desc,\n  l_shipmode AS ship_mode_name,\n  l_comment AS order_line_comment\n\nFROM {{ source('tpch', 'lineitem') }}\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "EUfBeqy6",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

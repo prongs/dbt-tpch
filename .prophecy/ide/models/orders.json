@@ -1,0 +1,85 @@
+{
+  "id" : "orders",
+  "metainfo" : {
+    "label" : "orders",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "orders##Ih1H7qNZ" : {
+      "id" : "orders##Ih1H7qNZ",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "orders",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "base_orders",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "noJgJWst",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "orders##oHpNOiLj" : {
+      "id" : "orders##oHpNOiLj",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "orders",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  o.order_key,\n  o.order_date,\n  o.customer_key,\n  o.order_status_code,\n  o.order_priority_code,\n  o.order_clerk_name,\n  o.shipping_priority,\n  o.order_amount\n\nFROM orders AS o\n\nORDER BY o.order_date\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zdxV9zI0",
+          "slug" : "o"
+        } ],
+        "outputs" : [ {
+          "id" : "uHSOf0vo",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "PJ4vVRGs",
+    "source" : "orders##Ih1H7qNZ",
+    "sourcePort" : "noJgJWst",
+    "target" : "orders##oHpNOiLj",
+    "targetPort" : "zdxV9zI0"
+  } ],
+  "component" : "Model"
+}

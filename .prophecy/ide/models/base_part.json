@@ -1,0 +1,53 @@
+{
+  "id" : "base_part",
+  "metainfo" : {
+    "label" : "base_part",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "base_part##ghTr3CoY" : {
+      "id" : "base_part##ghTr3CoY",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "base_part",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  p_partkey AS part_key,\n  p_name AS part_name,\n  p_mfgr AS part_manufacturer_name,\n  p_brand AS part_brand_name,\n  p_type AS part_type_name,\n  p_size AS part_size,\n  p_container AS part_container_desc,\n  p_retailprice AS retail_price,\n  p_comment AS part_comment\n\nFROM {{ source('tpch', 'part') }}\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "AKdzetdw",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

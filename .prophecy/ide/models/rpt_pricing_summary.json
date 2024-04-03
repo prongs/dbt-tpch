@@ -1,0 +1,54 @@
+{
+  "id" : "rpt_pricing_summary",
+  "metainfo" : {
+    "label" : "rpt_pricing_summary",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "rpt_pricing_summary##nYKhjruy" : {
+      "id" : "rpt_pricing_summary##nYKhjruy",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "rpt_pricing_summary",
+        "phase" : 0,
+        "macroDependencies" : [ "dbt_utils.dateadd" ],
+        "comment" : "\nPer TPC-H Spec: \n2.4.1 Pricing Summary Report Query (Q1)\n"
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "/*\nPer TPC-H Spec:\n2.4.1 Pricing Summary Report Query (Q1)\n*/\nSELECT \n  f.return_status_code,\n  f.order_line_status_code,\n  sum(f.quantity) AS quantity,\n  sum(f.gross_item_sales_amount) AS gross_item_sales_amount,\n  sum(f.discounted_item_sales_amount) AS discounted_item_sales_amount,\n  sum(f.net_item_sales_amount) AS net_item_sales_amount,\n  avg(f.quantity) AS avg_quantity,\n  avg(f.base_price) AS avg_base_price,\n  avg(f.discount_percentage) AS avg_discount_percentage,\n  sum(f.order_item_count) AS order_item_count\n\nFROM {{ ref('fct_orders_items')}} AS f\n\nWHERE f.ship_date <= {{ dbt_utils.dateadd('day', -90,  var('max_ship_date')) }}\n\nGROUP BY \n  1, 2\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Fbm3VTKh",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

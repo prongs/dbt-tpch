@@ -1,0 +1,21 @@
+{
+  "money" : {
+    "name" : "money",
+    "macroType" : "query",
+    "definition" : "\n::decimal(16,4)",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "col",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      } ]
+    },
+    "staleState" : "none",
+    "version" : 0
+  }
+}

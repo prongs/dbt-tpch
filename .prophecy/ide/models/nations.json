@@ -1,0 +1,85 @@
+{
+  "id" : "nations",
+  "metainfo" : {
+    "label" : "nations",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "nations##D7nHUmaH" : {
+      "id" : "nations##D7nHUmaH",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "nations",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "base_nation",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "gzUiCZuq",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "nations##z7gZ74MU" : {
+      "id" : "nations##z7gZ74MU",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "nations",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  n.nation_key,\n  n.nation_name,\n  n.region_key\n\nFROM nations AS n\n\nORDER BY n.nation_key\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "akd4lxgS",
+          "slug" : "n"
+        } ],
+        "outputs" : [ {
+          "id" : "ql2MJ89Z",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "SXcMYpKL",
+    "source" : "nations##D7nHUmaH",
+    "sourcePort" : "gzUiCZuq",
+    "target" : "nations##z7gZ74MU",
+    "targetPort" : "akd4lxgS"
+  } ],
+  "component" : "Model"
+}

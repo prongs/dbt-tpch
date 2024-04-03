@@ -1,0 +1,88 @@
+{
+  "id" : "rpt_minimum_cost_suppliers",
+  "metainfo" : {
+    "label" : "rpt_minimum_cost_suppliers",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "parts_suppliers##fhEWGAy8" : {
+      "id" : "parts_suppliers##fhEWGAy8",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "parts_suppliers",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "SELECT \n  s.supplier_account_balance,\n  s.supplier_name,\n  s.supplier_nation_key,\n  s.supplier_region_key,\n  s.supplier_nation_name,\n  s.supplier_region_name,\n  s.part_key,\n  s.part_manufacturer_name,\n  s.part_size,\n  s.part_type_name,\n  s.supplier_cost_amount,\n  s.supplier_address,\n  s.supplier_phone_number,\n  rank() OVER (PARTITION BY s.supplier_region_key, s.part_key ORDER BY s.supplier_cost_amount) AS supplier_cost_rank,\n  row_number() OVER (PARTITION BY s.supplier_region_key, s.part_key, s.supplier_cost_amount ORDER BY s.supplier_account_balance DESC) AS supplier_rank\n\nFROM {{ ref('dim_part_supplier_xrf')}} AS s\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "WhclIqx0",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "rpt_minimum_cost_suppliers##yMDQz4SZ" : {
+      "id" : "rpt_minimum_cost_suppliers##yMDQz4SZ",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "rpt_minimum_cost_suppliers",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT s.*\n\nFROM parts_suppliers AS s\n\nWHERE s.supplier_cost_rank = 1 and s.supplier_rank <= 100\n\nORDER BY s.supplier_name, s.part_key\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "bzVnf8jE",
+          "slug" : "s"
+        } ],
+        "outputs" : [ {
+          "id" : "ydVB3dVc",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "cDnemxlt",
+    "source" : "parts_suppliers##fhEWGAy8",
+    "sourcePort" : "WhclIqx0",
+    "target" : "rpt_minimum_cost_suppliers##yMDQz4SZ",
+    "targetPort" : "bzVnf8jE"
+  } ],
+  "component" : "Model"
+}

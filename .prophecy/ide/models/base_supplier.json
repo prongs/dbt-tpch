@@ -1,0 +1,53 @@
+{
+  "id" : "base_supplier",
+  "metainfo" : {
+    "label" : "base_supplier",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "base_supplier##mCNMvvsw" : {
+      "id" : "base_supplier##mCNMvvsw",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "base_supplier",
+        "phase" : 0,
+        "macroDependencies" : [ "money" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  s_suppkey AS supplier_key,\n  s_name AS supplier_name,\n  s_address AS supplier_address,\n  s_nationkey AS nation_key,\n  s_phone AS supplier_phone_number,\n  s_acctbal{{ money() }} AS supplier_account_balance,\n  s_comment AS supplier_comment\n\nFROM {{ source('tpch', 'supplier') }}\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "keuFaOHZ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

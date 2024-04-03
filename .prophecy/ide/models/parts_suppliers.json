@@ -1,0 +1,149 @@
+{
+  "id" : "parts_suppliers",
+  "metainfo" : {
+    "label" : "parts_suppliers",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "parts##JvxJGVdc" : {
+      "id" : "parts##JvxJGVdc",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "parts",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "parts",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "NQCwVntV",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "suppliers##uG4daiSJ" : {
+      "id" : "suppliers##uG4daiSJ",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "suppliers",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "suppliers",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "SNHqsFkL",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "part_suppliers##nESj8kPx" : {
+      "id" : "part_suppliers##nESj8kPx",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "part_suppliers",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "base_part_supplier",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "B1Hj50FX",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "parts_suppliers##WFQucwAS" : {
+      "id" : "parts_suppliers##WFQucwAS",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "parts_suppliers",
+        "phase" : 0,
+        "macroDependencies" : [ "dbt_utils.surrogate_key" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  {{ dbt_utils.surrogate_key('p.part_key', 's.supplier_key') }} AS part_supplier_key,\n  p.part_key,\n  p.part_name,\n  p.part_manufacturer_name,\n  p.part_brand_name,\n  p.part_type_name,\n  p.part_size,\n  p.part_container_desc,\n  p.retail_price,\n  s.supplier_key,\n  s.supplier_name,\n  s.nation_key,\n  ps.supplier_availabe_quantity,\n  ps.supplier_cost_amount\n\nFROM parts AS p\nJOIN part_suppliers AS ps\n   ON p.part_key = ps.part_key\nJOIN suppliers AS s\n   ON ps.supplier_key = s.supplier_key\n\nORDER BY p.part_key\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Kb3zfvyf",
+          "slug" : "p"
+        }, {
+          "id" : "z1cWNCq4",
+          "slug" : "ps"
+        }, {
+          "id" : "Eryu0KG3",
+          "slug" : "s"
+        } ],
+        "outputs" : [ {
+          "id" : "GCOqsnfI",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "GfSl00F1",
+    "source" : "parts##JvxJGVdc",
+    "sourcePort" : "NQCwVntV",
+    "target" : "parts_suppliers##WFQucwAS",
+    "targetPort" : "Kb3zfvyf"
+  }, {
+    "id" : "A2Di87qk",
+    "source" : "part_suppliers##nESj8kPx",
+    "sourcePort" : "B1Hj50FX",
+    "target" : "parts_suppliers##WFQucwAS",
+    "targetPort" : "z1cWNCq4"
+  }, {
+    "id" : "RgcmKTUH",
+    "source" : "suppliers##uG4daiSJ",
+    "sourcePort" : "SNHqsFkL",
+    "target" : "parts_suppliers##WFQucwAS",
+    "targetPort" : "Eryu0KG3"
+  } ],
+  "component" : "Model"
+}

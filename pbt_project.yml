@@ -1,0 +1,426 @@
+name: dbt_tpch
+description: ''
+version: 0.0.1
+author: null
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2024-04-03 16:01:42'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+subgraphs: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/fct_orders_items:
+    name: fct_orders_items
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/wh/fct_orders_items.sql
+    - .prophecy/ide/models/fct_orders_items.json
+    - models/wh/fct_orders_items.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/nations:
+    name: nations
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/ods/nations.sql
+    - .prophecy/ide/models/nations.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/orders:
+    name: orders
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/ods/orders.sql
+    - .prophecy/ide/models/orders.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/base_part_supplier:
+    name: base_part_supplier
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/base/base_part_supplier.sql
+    - .prophecy/ide/models/base_part_supplier.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/rpt_minimum_cost_suppliers:
+    name: rpt_minimum_cost_suppliers
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/wh/rpt_minimum_cost_suppliers.sql
+    - .prophecy/ide/models/rpt_minimum_cost_suppliers.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/base_customer:
+    name: base_customer
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/base/base_customer.sql
+    - .prophecy/ide/models/base_customer.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/fct_orders:
+    name: fct_orders
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/wh/fct_orders.sql
+    - .prophecy/ide/models/fct_orders.json
+    - models/wh/fct_orders.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/dim_part_supplier_xrf:
+    name: dim_part_supplier_xrf
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/wh/dim_part_supplier_xrf.sql
+    - .prophecy/ide/models/dim_part_supplier_xrf.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/suppliers:
+    name: suppliers
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/ods/suppliers.sql
+    - .prophecy/ide/models/suppliers.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/dim_supplier:
+    name: dim_supplier
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/wh/dim_supplier.sql
+    - .prophecy/ide/models/dim_supplier.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/base_supplier:
+    name: base_supplier
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/base/base_supplier.sql
+    - .prophecy/ide/models/base_supplier.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/orders_items:
+    name: orders_items
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/ods/orders_items.sql
+    - .prophecy/ide/models/orders_items.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/dim_customer:
+    name: dim_customer
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/wh/dim_customer.sql
+    - .prophecy/ide/models/dim_customer.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/rpt_pricing_summary:
+    name: rpt_pricing_summary
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/wh/rpt_pricing_summary.sql
+    - .prophecy/ide/models/rpt_pricing_summary.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/dim_part:
+    name: dim_part
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/wh/dim_part.sql
+    - .prophecy/ide/models/dim_part.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/regions:
+    name: regions
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/ods/regions.sql
+    - .prophecy/ide/models/regions.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/base_region:
+    name: base_region
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/base/base_region.sql
+    - .prophecy/ide/models/base_region.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/base_orders:
+    name: base_orders
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/base/base_orders.sql
+    - .prophecy/ide/models/base_orders.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/customers:
+    name: customers
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/ods/customers.sql
+    - .prophecy/ide/models/customers.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/parts:
+    name: parts
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/ods/parts.sql
+    - .prophecy/ide/models/parts.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/base_nation:
+    name: base_nation
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/base/base_nation.sql
+    - .prophecy/ide/models/base_nation.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/base_part:
+    name: base_part
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/base/base_part.sql
+    - .prophecy/ide/models/base_part.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/base_line_item:
+    name: base_line_item
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/base/base_line_item.sql
+    - .prophecy/ide/models/base_line_item.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmodels/parts_suppliers:
+    name: parts_suppliers
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/ods/parts_suppliers.sql
+    - .prophecy/ide/models/parts_suppliers.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2024-04-03 16:01:42'
+sqlMacros:
+  .prophecy/metadata/sqlmacros/dbt_housekeeping:
+    name: dbt_housekeeping
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/dbt_housekeeping.sql
+    - .prophecy/ide/macros/dbt_housekeeping.json
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/get_custom_schema.sql
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmacros/generate_schema_name_for_env:
+    name: generate_schema_name_for_env
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/get_custom_schema.sql
+    createdAt: '2024-04-03 16:01:42'
+  .prophecy/metadata/sqlmacros/money:
+    name: money
+    macroType: query
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/dt_convert_money.sql
+    createdAt: '2024-04-03 16:01:42'
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/tpch:
+    name: tpch
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/_source/source_tpch.yml
+    createdAt: '2024-04-03 16:01:42'
+    tables:
+    - name: customer
+      schema:
+        providerType: snowflake
+        fields: []
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2024-04-03 16:01:42'
+    - name: lineitem
+      schema:
+        providerType: snowflake
+        fields: []
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2024-04-03 16:01:42'
+    - name: nation
+      schema:
+        providerType: snowflake
+        fields: []
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2024-04-03 16:01:42'
+    - name: orders
+      schema:
+        providerType: snowflake
+        fields: []
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2024-04-03 16:01:42'
+    - name: part
+      schema:
+        providerType: snowflake
+        fields: []
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2024-04-03 16:01:42'
+    - name: partsupp
+      schema:
+        providerType: snowflake
+        fields: []
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2024-04-03 16:01:42'
+    - name: region
+      schema:
+        providerType: snowflake
+        fields: []
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2024-04-03 16:01:42'
+    - name: supplier
+      schema:
+        providerType: snowflake
+        fields: []
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2024-04-03 16:01:42'
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: abhisheks+e2etests@prophecy.io
+  createdAt: '2024-04-03 16:01:42'
+dependencies: []
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
+pipelineConfigurations: {}

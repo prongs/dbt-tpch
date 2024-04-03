@@ -1,0 +1,53 @@
+{
+  "id" : "base_orders",
+  "metainfo" : {
+    "label" : "base_orders",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "base_orders##IENtmI2R" : {
+      "id" : "base_orders##IENtmI2R",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "base_orders",
+        "phase" : 0,
+        "macroDependencies" : [ "money" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  o_orderkey AS order_key,\n  o_custkey AS customer_key,\n  o_orderstatus AS order_status_code,\n  o_totalprice{{ money() }} AS order_amount,\n  o_orderdate AS order_date,\n  o_orderpriority AS order_priority_code,\n  o_clerk AS order_clerk_name,\n  o_shippriority AS shipping_priority,\n  o_comment AS order_comment\n\nFROM {{ source('tpch', 'orders') }}\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "A3uE4LLW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

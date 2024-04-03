@@ -1,0 +1,85 @@
+{
+  "id" : "regions",
+  "metainfo" : {
+    "label" : "regions",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "table",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "regions##ELmTusdx" : {
+      "id" : "regions##ELmTusdx",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "regions",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "base_region",
+          "sourceType" : "Model"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "LlPg91Rd",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "regions##Tviv4qUZ" : {
+      "id" : "regions##Tviv4qUZ",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "regions",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  r.region_key,\n  r.region_name\n\nFROM regions AS r\n\nORDER BY r.region_key\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ZBsdr2rG",
+          "slug" : "r"
+        } ],
+        "outputs" : [ {
+          "id" : "NeEwGvNN",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "FlHQnTrN",
+    "source" : "regions##ELmTusdx",
+    "sourcePort" : "LlPg91Rd",
+    "target" : "regions##Tviv4qUZ",
+    "targetPort" : "ZBsdr2rG"
+  } ],
+  "component" : "Model"
+}

@@ -1,0 +1,49 @@
+{
+  "generate_schema_name_for_env" : {
+    "name" : "generate_schema_name_for_env",
+    "macroType" : "expression",
+    "definition" : "{% set default_schema = target.schema %}\n \n{% if ((target.name == 'prod' or\n              target.name == 'dev' or\n              target.name == 'default') and\n              (custom_schema_name is not none)) %}\n  {{custom_schema_name | trim}}\n{% else %}\n  {{default_schema}}\n{% endif %} \n",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "custom_schema_name",
+        "kind" : {
+          "type" : "value",
+          "value" : "none"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      } ]
+    },
+    "staleState" : "none",
+    "version" : 0
+  },
+  "generate_schema_name" : {
+    "name" : "generate_schema_name",
+    "macroType" : "expression",
+    "definition" : "{{ generate_schema_name_for_env(schema_name) }}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "schema_name",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "node",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      } ]
+    },
+    "staleState" : "none",
+    "version" : 0
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id" : "base_nation",
+  "metainfo" : {
+    "label" : "base_nation",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "base_nation##fYs3MVHD" : {
+      "id" : "base_nation##fYs3MVHD",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "base_nation",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  n_nationkey AS nation_key,\n  n_name AS nation_name,\n  n_regionkey AS region_key,\n  n_comment AS nation_comment\n\nFROM {{ source('tpch', 'nation') }}\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "jbysyCJp",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

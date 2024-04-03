@@ -1,0 +1,53 @@
+{
+  "id" : "base_customer",
+  "metainfo" : {
+    "label" : "base_customer",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "type" : "ModelConfig"
+      },
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "base_customer##VDIAJC1o" : {
+      "id" : "base_customer##VDIAJC1o",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "base_customer",
+        "phase" : 0,
+        "macroDependencies" : [ "money" ]
+      },
+      "properties" : {
+        "customQueryDisabled" : false,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT \n  c_custkey AS customer_key,\n  c_name AS customer_name,\n  c_address AS customer_address,\n  c_nationkey AS nation_key,\n  c_phone AS customer_phone_number,\n  c_acctbal{{ money() }} AS customer_account_balance,\n  c_mktsegment AS customer_market_segment_name,\n  c_comment AS customer_comment\n\nFROM {{ source('tpch', 'customer') }}\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ikGGS1PN",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}
