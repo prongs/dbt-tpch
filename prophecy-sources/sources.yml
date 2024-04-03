@@ -1,0 +1,35 @@
+---
+version: 2
+sources:
+- name: "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1000"
+  database: "SNOWFLAKE_SAMPLE_DATA"
+  schema: "TPCH_SF1000"
+  config:
+    enabled: true
+  tables:
+  - name: "CUSTOMER"
+    columns:
+    - name: "C_CUSTKEY"
+      dataType:
+        type: "Number"
+    - name: "C_NAME"
+      dataType:
+        type: "String"
+    - name: "C_ADDRESS"
+      dataType:
+        type: "String"
+    - name: "C_NATIONKEY"
+      dataType:
+        type: "Number"
+    - name: "C_PHONE"
+      dataType:
+        type: "String"
+    - name: "C_ACCTBAL"
+      dataType:
+        type: "Number"
+    - name: "C_MKTSEGMENT"
+      dataType:
+        type: "String"
+    - name: "C_COMMENT"
+      dataType:
+        type: "String"

@@ -2,7 +2,7 @@
   "id" : "fct_orders",
   "metainfo" : {
     "label" : "fct_orders",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -24,6 +24,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "orders",
+        "x" : 220,
+        "y" : 20,
         "phase" : 0
       },
       "properties" : {
@@ -47,6 +49,8 @@
       "component" : "Aggregate",
       "metadata" : {
         "label" : "order_item_summary",
+        "x" : 220,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -106,6 +110,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "final",
+        "x" : 420,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -192,6 +198,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "orders_items",
+        "x" : 20,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -215,6 +223,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "fct_orders",
+        "x" : 620,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ "dbt_housekeeping" ]
       },
@@ -231,7 +241,7 @@
       "ports" : {
         "inputs" : [ {
           "id" : "KQoJrd5D",
-          "slug" : "f"
+          "slug" : "final"
         } ],
         "outputs" : [ {
           "id" : "YXNeBF7Z",

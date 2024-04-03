@@ -349,6 +349,45 @@ sqlMacros:
     createdAt: '2024-04-03 16:01:42'
 sqlSeeds: {}
 sqlSources:
+  .prophecy/metadata/sqlsources/SNOWFLAKE_SAMPLE_DATA_TPCH_SF1000:
+    name: SNOWFLAKE_SAMPLE_DATA.TPCH_SF1000
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2024-04-03 16:14:22'
+    tables:
+    - name: CUSTOMER
+      schema:
+        providerType: snowflake
+        fields:
+        - name: C_CUSTKEY
+          dataType:
+            type: Number
+        - name: C_NAME
+          dataType:
+            type: String
+        - name: C_ADDRESS
+          dataType:
+            type: String
+        - name: C_NATIONKEY
+          dataType:
+            type: Number
+        - name: C_PHONE
+          dataType:
+            type: String
+        - name: C_ACCTBAL
+          dataType:
+            type: Number
+        - name: C_MKTSEGMENT
+          dataType:
+            type: String
+        - name: C_COMMENT
+          dataType:
+            type: String
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2024-04-03 16:14:22'
   .prophecy/metadata/sqlsources/tpch:
     name: tpch
     description: null
@@ -358,58 +397,42 @@ sqlSources:
     createdAt: '2024-04-03 16:01:42'
     tables:
     - name: customer
-      schema:
-        providerType: snowflake
-        fields: []
+      schema: null
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2024-04-03 16:01:42'
     - name: lineitem
-      schema:
-        providerType: snowflake
-        fields: []
+      schema: null
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2024-04-03 16:01:42'
     - name: nation
-      schema:
-        providerType: snowflake
-        fields: []
+      schema: null
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2024-04-03 16:01:42'
     - name: orders
-      schema:
-        providerType: snowflake
-        fields: []
+      schema: null
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2024-04-03 16:01:42'
     - name: part
-      schema:
-        providerType: snowflake
-        fields: []
+      schema: null
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2024-04-03 16:01:42'
     - name: partsupp
-      schema:
-        providerType: snowflake
-        fields: []
+      schema: null
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2024-04-03 16:01:42'
     - name: region
-      schema:
-        providerType: snowflake
-        fields: []
+      schema: null
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2024-04-03 16:01:42'
     - name: supplier
-      schema:
-        providerType: snowflake
-        fields: []
+      schema: null
       description: null
       author: abhisheks+e2etests@prophecy.io
       createdAt: '2024-04-03 16:01:42'

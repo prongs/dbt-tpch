@@ -1,0 +1,850 @@
+{
+  "name" : "dbt_tpch",
+  "fileSystem" : {
+    "type" : "Folder",
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "providerType" : "snowflake",
+  "fabricId" : "2598",
+  "prophecyIDEFolder" : {
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "externalSources" : {
+    "type" : "Project",
+    "name" : "",
+    "children" : [ {
+      "type" : "Database",
+      "name" : "ANYA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "ASHISH",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "BLACKROCK",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "BOBW",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "CHETAN",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "DOCS_ANALYTICS",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "DOCS_RAW",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "EX1_GOR_X",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "EX1_GOR_Y",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "FINANCIAL__ECONOMIC_ESSENTIALS",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JAFFLE_SHOP",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JAFFLE_SHOP_VLAUNIR",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JASVINDER",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JSR",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "KEERTHI",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "KISHORE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "MACIEJ",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "MEITEST",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "NTONG",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "POOJA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "QA_DATABASE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "RJ",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SNOWFLAKE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SNOWFLAKE_SAMPLE_DATA",
+      "children" : [ {
+        "type" : "Schema",
+        "name" : "INFORMATION_SCHEMA",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "TPCDS_SF100TCL",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "TPCDS_SF10TCL",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "TPCH_SF1",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "TPCH_SF10",
+        "tables" : {
+          "SUPPLIER" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "S_SUPPKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "S_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "S_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "S_NATIONKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "S_PHONE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "S_ACCTBAL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "S_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "REGION" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "R_REGIONKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "R_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "R_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "CUSTOMER" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "C_CUSTKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "C_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "C_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "C_NATIONKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "C_PHONE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "C_ACCTBAL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "C_MKTSEGMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "C_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "ORDERS" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "O_ORDERKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "O_CUSTKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "O_ORDERSTATUS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "O_TOTALPRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "O_ORDERDATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "O_ORDERPRIORITY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "O_CLERK",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "O_SHIPPRIORITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "O_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "PARTSUPP" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PS_PARTKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PS_SUPPKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PS_AVAILQTY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PS_SUPPLYCOST",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PS_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "NATION" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "N_NATIONKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "N_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "N_REGIONKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "N_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "LINEITEM" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "L_ORDERKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_PARTKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_SUPPKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_LINENUMBER",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_EXTENDEDPRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_DISCOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_TAX",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_RETURNFLAG",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "L_LINESTATUS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "L_SHIPDATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "L_COMMITDATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "L_RECEIPTDATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "L_SHIPINSTRUCT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "L_SHIPMODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "L_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "PART" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "P_PARTKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "P_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "P_MFGR",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "P_BRAND",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "P_TYPE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "P_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "P_CONTAINER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "P_RETAILPRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "P_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          }
+        }
+      }, {
+        "type" : "Schema",
+        "name" : "TPCH_SF100",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "TPCH_SF1000",
+        "tables" : {
+          "SUPPLIER" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "S_SUPPKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "S_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "S_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "S_NATIONKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "S_PHONE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "S_ACCTBAL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "S_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "REGION" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "R_REGIONKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "R_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "R_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "CUSTOMER" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "C_CUSTKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "C_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "C_ADDRESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "C_NATIONKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "C_PHONE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "C_ACCTBAL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "C_MKTSEGMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "C_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "ORDERS" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "O_ORDERKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "O_CUSTKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "O_ORDERSTATUS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "O_TOTALPRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "O_ORDERDATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "O_ORDERPRIORITY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "O_CLERK",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "O_SHIPPRIORITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "O_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "PARTSUPP" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PS_PARTKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PS_SUPPKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PS_AVAILQTY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PS_SUPPLYCOST",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PS_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "NATION" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "N_NATIONKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "N_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "N_REGIONKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "N_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "LINEITEM" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "L_ORDERKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_PARTKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_SUPPKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_LINENUMBER",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_QUANTITY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_EXTENDEDPRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_DISCOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_TAX",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "L_RETURNFLAG",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "L_LINESTATUS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "L_SHIPDATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "L_COMMITDATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "L_RECEIPTDATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "L_SHIPINSTRUCT",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "L_SHIPMODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "L_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "PART" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "P_PARTKEY",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "P_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "P_MFGR",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "P_BRAND",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "P_TYPE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "P_SIZE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "P_CONTAINER",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "P_RETAILPRICE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "P_COMMENT",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          }
+        }
+      } ]
+    }, {
+      "type" : "Database",
+      "name" : "TESTING",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "VLAUNIR_DB",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "\"jaffle_shop\"",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "\"qa_database\"",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "\"qa_database_lower_case_only\"",
+      "children" : [ ]
+    } ]
+  },
+  "dependenciesContainer" : {
+    "dependencies" : { },
+    "lastError" : "Building dependency project dbt_utils failed. Error during parsing: Code Parsing error at 31:105 or at 31:103 with probable reason \"singleQuotedString expected\" ,\nError during parsing: Code Parsing error at token {} with probable reason \"theUnPivot expected\" ,\nError during parsing: Code Parsing error at token {} with probable reason \"theUnPivot expected\" ,\nError during parsing: Code Parsing error at token {} with probable reason \"[1.10] parsed: Macro\" ",
+    "prophecyProjectDependencies" : { }
+  },
+  "sourcesToSync" : [ ],
+  "frontEndLanguage" : "sql"
+}
